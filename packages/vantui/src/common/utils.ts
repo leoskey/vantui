@@ -48,7 +48,7 @@ export function addUnit(value: any) {
   return /^-?\d+(\.\d+)?$/.test('' + value) ? Taro.pxTransform(value) : value
 }
 export function requestAnimationFrame(cb: any) {
-  if (window.requestAnimationFrame) {
+  if (window && window.requestAnimationFrame) {
     return window.requestAnimationFrame(cb)
   }
 
@@ -56,7 +56,7 @@ export function requestAnimationFrame(cb: any) {
 }
 
 export function cancelAnimationFrame(id: any) {
-  if (window.cancelAnimationFrame) {
+  if (window && window.cancelAnimationFrame) {
     return window.cancelAnimationFrame(id)
   }
 
